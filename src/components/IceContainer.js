@@ -1,24 +1,24 @@
 import React from "react";
-import buyCake from "../Redux/cakes/cakeAction";
+import buyIce from "../Redux/iceCreams/iceAction";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
   return {
-    noOfCakes: state.cake.noOfCakes
+    noOfIce: state.ice.noOfIce
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    buyCake: () => dispatch(buyCake())
+    buyIce: () => dispatch(buyIce())
   };
 };
 
-function cakeContainer(props) {
+function IceContainer(props) {
   return (
     <div>
-      <h2>Number of cakes :{props.noOfCakes}</h2>
-      <button onClick={props.buyCake}>Buy Cake</button>
+      <h2>Number of Ice :{props.noOfIce}</h2>
+      <button onClick={props.buyIce}>Buy Cake</button>
     </div>
   );
 }
@@ -26,4 +26,4 @@ function cakeContainer(props) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(cakeContainer);
+)(IceContainer);
